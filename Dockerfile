@@ -1,14 +1,14 @@
 # We're using Ubuntu 20.10
-FROM sahyam/docker:groovy
+FROM liualvinas24/docker:latest
 
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b sql-extended https://github.com/Camel07/Kampang /root/userbot
+RUN git clone -b Lord-Userbot https://github.com/Zora24/Lord-Userbot /root/userbot
 RUN mkdir /root/userbot/.bin
 WORKDIR /root/userbot
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/Camel07/Kampang/sql-extended/requirements.txt
+RUN pip3 install -r https://raw.githubusercontent.com/Zora24/Lord-Userbot/Lord-Userbot/requirements.txt
 
 CMD ["python3","-m","userbot"]
