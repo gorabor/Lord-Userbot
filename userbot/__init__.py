@@ -2,12 +2,13 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#inline credit @keselekpermen69
+# inline credit @keselekpermen69
 """ Userbot initialization. """
 
 import os
-import re
 import time
+import re
+
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
@@ -23,6 +24,9 @@ from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 
 load_dotenv("config.env")
+
+
+StartTime = time.time()
 
 CMD_LIST = {}
 # for later purposes
@@ -60,29 +64,34 @@ if CONFIG_CHECK:
     quit(1)
 
 # Telegram App KEY and HASH
-API_KEY = os.environ.get("API_KEY", None)
-API_HASH = os.environ.get("API_HASH", None)
+API_KEY = os.environ.get("API_KEY", "")
+API_HASH = os.environ.get("API_HASH", "")
 
 # Userbot Session String
-STRING_SESSION = os.environ.get("STRING_SESSION", None)
+STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", None))
+BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 
 # Userbot logging feature switch.
-BOTLOG = sb(os.environ.get("BOTLOG", "False"))
+BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
+# Send .chatid in any group with all your administration bots (added)
+G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
+if G_BAN_LOGGER_GROUP:
+    G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
+
 # Heroku Credentials for updater.
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
-HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", "")
+HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", "")
 
 # JustWatch Country
-WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY","IN")
+WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "ID")
 
 # Github Credentials for updater and Gitupload.
 GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
@@ -91,9 +100,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/sahyam2019/oub-remix.git")
+    "https://github.com/Zora24/Lord-Userbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "sql-extended")    
+    "UPSTREAM_REPO_BRANCH", "Lord-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -108,8 +117,9 @@ OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 
 # Chrome Driver and Headless Google Chrome Binaries
-CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
+GOOGLE_CHROME_BIN = os.environ.get(
+    "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
 NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
@@ -127,8 +137,8 @@ LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 MONGO_URI = os.environ.get("MONGO_URI", None)
 
 # set blacklist_chats where you do not want userbot's features
-UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", "")
-    
+UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", None)
+
 # Anti Spambot Config
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
@@ -140,7 +150,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Time & Date - Country and Time Zone
-COUNTRY = str(os.environ.get("COUNTRY", ""))
+COUNTRY = str(os.environ.get("COUNTRY", "ID"))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
 # Clean Welcome
@@ -153,14 +163,20 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "oub-remix")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Lord-Userbot")
 
-#Bot version
+# Bot version
 BOT_VER = os.environ.get("BOT_VER", "4.0")
+
+# Default .alive username
+ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
+
+# Sticker Custom Pack Name
+S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/7714b2fd458c5e678d1a6.jpg"    
+    "ALIVE_LOGO") or "https://telegra.ph/file/62dc59b2013a48f9cc8f3.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -204,14 +220,12 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
 # Photo Chat - Get this value from http://antiddos.systems
-API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
+API_TOKEN = os.environ.get("API_TOKEN", None)
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
-
-
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
@@ -238,11 +252,6 @@ def is_redis_alive():
         return True
     except BaseException:
         return False
-    
-
-
-
-
 
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
@@ -298,13 +307,25 @@ async def check_botlog_chatid():
 with bot:
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
-    except:
+    except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't valid"
-            "Please generate proper group id and set.You can ask in @remixsupport if you need help")
+            "BOTLOG_CHATID environment variable isn't a "
+            "valid entity. Check your environment variables/config.env file.")
         quit(1)
 
-StartTime = time.time()        
+
+async def check_alive():
+    await bot.send_message(BOTLOG_CHATID, "```『Lord-Userbot Telah Aktif』```")
+    return
+
+with bot:
+    try:
+        bot.loop.run_until_complete(check_alive())
+    except BaseException:
+        LOGS.info(
+            "BOTLOG_CHATID environment variable isn't a "
+            "valid entity. Check your environment variables/config.env file.")
+        quit(1)
 
 # Global Variables
 COUNT_MSG = 0
@@ -315,18 +336,21 @@ LASTMSG = {}
 CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
+ZALG_LIST = {}
 
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
-    number_of_cols = 2
+    number_of_cols = 4
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {}".format("🔹", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {}".format("⚙️", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
-    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
+    pairs = list(zip(modules[::number_of_cols],
+                     modules[1::number_of_cols],
+                     modules[2::number_of_cols]))
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
@@ -337,11 +361,11 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⬅️", data="{}_prev({})".format(prefix, modulo_page)
+                    "⌫️", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "➡️", data="{}_next({})".format(prefix, modulo_page)
-                ),
+                    "⌦️", data="{}_next({})".format(prefix, modulo_page)
+                )
             )
         ]
     return pairs
@@ -362,9 +386,9 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [oub-remix](https://github.com/sahyam2019/oub-remix) modules helper...\nplease make your own bot, don't use mine 😋")
+                await event.reply("Lord-Userbot, Buat Userbot Mu Sendiri [Tekan Disini](https://github.com/Zora24/Lord-Userbot.git)")
             else:
-                await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
+                await event.reply(f"`Hai Lord {ALIVE_NAME}\n\nApa Kabarmu Lord:)`")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -374,9 +398,9 @@ with bot:
             if event.query.user_id == uid and query.startswith("@UserButt"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
-                    "Please Use Only With .help Command",
-                    text="{}\nTotal loaded modules: {}".format(
-                        "oubremix modules helper.\n",
+                    "Harap Gunakan .help Untuk Perintah",
+                    text="{}\nTotal Modul: {}\n               \n🖥 **Main Menu** 🖥\n".format(
+                        "ALVIN✗BOT BANTUAN MODUL",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -384,22 +408,22 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "oubremix Helper",
-                    text="List of Modules",
+                    "ALVIN✗BOT Helper",
+                    text="Daftar Modul",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    "oubremix",
+                    "ALVIN✗BOT",
                     text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
                     buttons=[
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/sahyam2019/oub-remix"),
+                                "https://github.com/Zora24/Lord-Userbot"),
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/remixsupport")],
+                                "t.me/liualvinas")],
                     ],
                     link_preview=False,
                 )
@@ -453,7 +477,7 @@ with bot:
                 if len(cmdhel) > 150:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
-                        + "\n\nRead more .help "
+                        + "\n\nBaca Lagi Ketik .help "
                         + modul_name
                         + " "
                     )

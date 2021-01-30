@@ -1,35 +1,33 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-##inline credit @keselekpermen69
+#
+""" Userbot module for managing events.
+ One of the main components of the userbot. """
 
-"""Userbot module for managing events. One of the main components of the userbot."""
 
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
-from os import remove
-import asyncio
 from time import gmtime, strftime
 from traceback import format_exc
 
 from telethon import events
 
-from userbot import bot, BOTLOG_CHATID, LOGSPAMMER
+from userbot import LOGSPAMMER, bot
 
 
 def register(**args):
     """ Register a new event. """
     pattern = args.get('pattern', None)
-    disable_edited = args.get('disable_edited', True)
+    disable_edited = args.get('disable_edited', False)
     ignore_unsafe = args.get('ignore_unsafe', False)
     unsafe_pattern = r'^[^/!#@\$A-Za-z]'
     groups_only = args.get('groups_only', False)
     trigger_on_fwd = args.get('trigger_on_fwd', False)
     disable_errors = args.get('disable_errors', False)
     insecure = args.get('insecure', False)
-    trigger_on_inline = args.get('trigger_on_inline', False)
 
     if pattern is not None and not pattern.startswith('(?i)'):
         args['pattern'] = '(?i)' + pattern
@@ -52,9 +50,6 @@ def register(**args):
     if "insecure" in args:
         del args['insecure']
 
-    if "trigger_on_inline" in args:
-        del args['trigger_on_inline']
-
     if pattern:
         if not ignore_unsafe:
             args['pattern'] = pattern.replace('^.', unsafe_pattern, 1)
@@ -66,9 +61,9 @@ def register(**args):
                 # Ignore edits that take place in channels.
                 return
             if not LOGSPAMMER:
-                send_to = check.chat_id
+                check.chat_id
             else:
-                send_to = BOTLOG_CHATID
+                pass
 
             if not trigger_on_fwd and check.fwd_from:
                 return
@@ -78,9 +73,6 @@ def register(**args):
                 return
 
             if check.via_bot_id and not insecure and check.out:
-                return
-
-            if check.via_bot_id and not trigger_on_inline:
                 return
 
             try:
@@ -105,11 +97,11 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**REMIX ERROR REPORT**\n"
-                    link = "[OUB REMIX](https://t.me/remixsupport)"
-                    text += "If you want to, you can report it"
-                    text += f"- just forward this message to {link}.\n"
-                    text += "Nothing is logged except the fact of error and date\n"
+                    text = "**Lord-Userbot ERROR**\n"
+                    link = "Silahkan chat: @liualvinas"
+                    text += "Untuk melaporkan kesalahan"
+                    text += f"- tinggal teruskan pesan ini {link}.\n"
+                    text += "Alvin Siap Membantu Kamu\n"
 
                     ftext = "========== DISCLAIMER =========="
                     ftext += "\nThis file uploaded ONLY here,"
@@ -143,22 +135,10 @@ def register(**args):
 
                     ftext += result
 
-                    with open("error.txt", "w+") as file:
-                        file.write(ftext)
+                    file = open("error.log", "w+")
+                    file.write(ftext)
+                    file.close()
 
-                    #if LOGSPAMMER:
-                      #  sorry_msg = await check.respond(
-                       #    "`Sorry,userbot has crashed.\
-                    #    \nCheck botlog group for error logs.`"
-                      #  )
-                     #   await asyncio.sleep(3.5)
-                     #   await sorry_msg.delete()
-
-
-                   # await check.client.send_file(send_to,
-                   #                              "error.txt",
-                     #                            caption=text)
-                    remove("error.txt")
             else:
                 pass
 
@@ -166,5 +146,4 @@ def register(**args):
             bot.add_event_handler(wrapper, events.MessageEdited(**args))
         bot.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
-
     return decorator
