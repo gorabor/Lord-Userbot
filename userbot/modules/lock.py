@@ -27,34 +27,34 @@ async def locks(event):
     changeinfo = None
     if input_str == "msg":
         msg = True
-        what = "messages"
+        what = "Pesan"
     elif input_str == "media":
         media = True
-        what = "media"
+        what = "Media"
     elif input_str == "sticker":
         sticker = True
-        what = "stickers"
+        what = "Sticker"
     elif input_str == "gif":
         gif = True
-        what = "GIFs"
+        what = "GIF"
     elif input_str == "game":
         gamee = True
-        what = "games"
+        what = "Game"
     elif input_str == "inline":
         ainline = True
-        what = "inline bots"
+        what = "Inline Bot"
     elif input_str == "poll":
         gpoll = True
-        what = "polls"
+        what = "Poll"
     elif input_str == "invite":
         adduser = True
-        what = "invites"
+        what = "Invite"
     elif input_str == "pin":
         cpin = True
-        what = "pins"
+        what = "Pin"
     elif input_str == "info":
         changeinfo = True
-        what = "chat info"
+        what = "Info"
     elif input_str == "all":
         msg = True
         media = True
@@ -66,7 +66,7 @@ async def locks(event):
         adduser = True
         cpin = True
         changeinfo = True
-        what = "everything"
+        what = "Semuanya"
     else:
         if not input_str:
             await event.edit("`Mohon Maaf Lord, Apa Yang Harus Saya Kunci? ヅ`")
@@ -115,34 +115,34 @@ async def rem_locks(event):
     changeinfo = None
     if input_str == "msg":
         msg = False
-        what = "messages"
+        what = "Pesan"
     elif input_str == "media":
         media = False
-        what = "media"
+        what = "Media"
     elif input_str == "sticker":
         sticker = False
-        what = "stickers"
+        what = "Sticker"
     elif input_str == "gif":
         gif = False
-        what = "GIFs"
+        what = "GIF"
     elif input_str == "game":
         gamee = False
-        what = "games"
+        what = "Game"
     elif input_str == "inline":
         ainline = False
-        what = "inline bots"
+        what = "Inline"
     elif input_str == "poll":
         gpoll = False
-        what = "polls"
+        what = "Poll"
     elif input_str == "invite":
         adduser = False
-        what = "invites"
+        what = "Invite"
     elif input_str == "pin":
         cpin = False
-        what = "pins"
+        what = "Pin"
     elif input_str == "info":
         changeinfo = False
-        what = "chat info"
+        what = "Info"
     elif input_str == "all":
         msg = False
         media = False
@@ -154,7 +154,7 @@ async def rem_locks(event):
         adduser = False
         cpin = False
         changeinfo = False
-        what = "everything"
+        what = "Semuanya"
     else:
         if not input_str:
             await event.edit("`Apa Yang Harus Saya Buka Lord ヅ`")
@@ -191,7 +191,7 @@ CMD_HELP.update({
     "locks":
     "`.lock <all atau Jenis>` atau `.unlock <all atau Jenis>`\
 \nUsage: Memungkinkan anda kunci atau membuka kunci, beberapa jenis pesan dalam obrolan.\
-[Anda Harus Jadi Admin Grup Untuk Menggunakan Perintah!]\
+\n[Anda Harus Jadi Admin Grup Untuk Menggunakan Perintah!]\
 \n\nJenis pesan yang bisa dikunci atau dibuka adalah: \
 \n`all, msg, media, sticker, gif, game, inline, poll, invite, pin, info`\n**Contoh:** `.lock msg` atau `.unlock msg`"
 })
