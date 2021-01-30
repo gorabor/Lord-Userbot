@@ -16,12 +16,12 @@ async def mim(event):
         return
     if not event.reply_to_msg_id:
         await event.edit(
-            "`Syntax: Balas Ke Gambar Ketik .mmf` 'Teks Atas' ; 'Teks Bawah' "
+            "Mohon Balas Ke Gambar Ketik `.mmf 'Teks Atas' ; 'Teks Bawah'` "
         )
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("```Balas Ke Gambar/Sticker/Gif```")
+        await event.edit("```Mohon Balas Ke Gambar/Sticker/Gif```")
         return
     reply_message.sender
     await bot.download_file(reply_message.media)
@@ -30,7 +30,7 @@ async def mim(event):
         return
     else:
         await event.edit(
-            "``Mengubah Gambar Ini Mwahaha Saatnya Menulis ツ ```"
+            "``Mengubah Gambar Ini Mwahaha Saatnya Menulis ツ ``"
         )
         await asyncio.sleep(5)
         text = event.pattern_match.group(1)
@@ -172,12 +172,12 @@ async def mim(event):
         return
     if not event.reply_to_msg_id:
         await event.edit(
-            "`Syntax: Balas Ke Gambar Ketik .mmf` 'Teks Atas' ; 'Teks Bawah' "
+            "Mohon Balas Ke Gambar Ketik `.mmf 'Teks Atas' ; 'Teks Bawah'` "
         )
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("```Balas Ke Gambar/Sticker/Gif```")
+        await event.edit("```Mohon Balas Ke Gambar/Sticker/Gif```")
         return
     reply_message.sender
     await bot.download_file(reply_message.media)
