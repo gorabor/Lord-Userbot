@@ -408,21 +408,21 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Lord✗Userbot Helper",
+                    "Bantuan Lord✗Userbot ",
                     text="Daftar Modul",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    "Lord✗Userbot",
-                    text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
+                    "**Lord✗Userbot**",
+                    text="""**Anda Bisa Membuat Lord Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](t.me/Lorduserbot_Group)""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "GitHub Repo",
+                                "Repo Lord-Userbot",
                                 "https://github.com/Zora24/Lord-Userbot"),
                             custom.Button.url(
-                                "Support",
+                                "Pemilik Repo",
                                 "t.me/liualvinas")],
                     ],
                     link_preview=False,
@@ -477,7 +477,7 @@ with bot:
                 if len(cmdhel) > 150:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
-                        + "\n\nBaca Lagi Ketik .help "
+                        + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
