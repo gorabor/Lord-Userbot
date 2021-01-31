@@ -58,12 +58,12 @@ CMD_HELP.update({
     "animasi":
     "`.nah`\
     \nUsage: tapi bo'ong.\
-    \n\n`.ily`\
-    \nUsage: i love you\
+    \n\n`.bunga` ; `.buah`\
+    \nUsage: animasi.\
+    \n\n`.waktu`\
+    \nUsage: animasi.\
     \n\n`.hua`\
-    \nUsage: Nangis.\
-    \n\n`kosong`\
-    \nUsage: kosong\
+    \nUsage: nangis.\
     \n\n`kosong`\
     \nUsage: kosong"
 })
