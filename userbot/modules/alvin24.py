@@ -54,7 +54,7 @@ async def typewriter(typew):
                      "`\n💖<\  *Tapi Bo'ong`")       
 
 
-  CMD_HELP.update({
+CMD_HELP.update({
     "animasi":
     "`.nah`\
     \nUsage: tapi bo'ong.\
