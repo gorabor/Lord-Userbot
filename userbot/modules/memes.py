@@ -1255,7 +1255,7 @@ async def moon(event):
 
 @register(outgoing=True, pattern=r"^\.ily$")
 async def moon(event):
-    deq = deque(list("I LOVE YOU 💗"))
+    deq = deque(list("I.LOVE.YOU💗"))
     try:
         for x in range(32):
             await sleep(0.1)
