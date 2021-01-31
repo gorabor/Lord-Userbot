@@ -20,7 +20,7 @@ from userbot.modules.admin import get_user_from_event
 # ================= CONSTANT =================
 METOOSTR = [
     "Aku Juga Terimakasih",
-    "Haha Iya, Aku Juha",
+    "Haha Iya, Aku Juga",
     "Sama Haha",
     "Aku Juga Gabut",
     "Sama Sini",
