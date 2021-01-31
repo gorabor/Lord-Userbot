@@ -26,13 +26,13 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    "Hai Selamat Datang Di Room Chat\n"
-    f"Lord `{DEFAULTUSER}` Saya Adalah Bot\n"
-    f"Yang Menjaga Room Chat Lord `{DEFAULTUSER}`\n"
-    "Mohon Jangan Melakukan Spam Ke Room Chat Lord\n"
-    "Karna Jika Anda Melakukan Itu Saya Akan Otomatis\n"
-    f"Memblokir Anda, Tunggulah Sampai Lord `{DEFAULTUSER}`\n"
-    "Menerima Pesan Anda, Terimakasih.")
+    "__Hai Selamat Datang Di Room Chat__"
+    f"__Lord__ `{DEFAULTUSER}` __Saya Adalah Bot__"
+    f"__Yang Menjaga Room Chat Lord__ `{DEFAULTUSER}`\n"
+    "__Mohon Jangan Melakukan Spam Ke Room Chat Lord__"
+    "__Karna Jika Anda Melakukan Itu Saya Akan Otomatis__"
+    f"__Memblokir Anda, Tunggulah Sampai Lord__ `{DEFAULTUSER}`"
+    "__Menerima Pesan Anda, Terimakasih.__")
 # =================================================================
 
 
