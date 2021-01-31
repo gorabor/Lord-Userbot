@@ -1253,11 +1253,33 @@ async def moon(event):
     except BaseException:
         return
 
-@register(outgoing=True, pattern=r"^\.ily$")
+@register(outgoing=True, pattern=r"^\.bunga$")
 async def moon(event):
-    deq = deque(list("I.LOVE.YOU💗"))
+    deq = deque(list("🌼🌻🌺🌹🌸🌷"))
     try:
-        for x in range(32):
+        for x in range(35):
+            await sleep(0.1)
+            await event.edit("".join(deq))
+            deq.rotate(1)
+    except BaseException:
+        return
+
+@register(outgoing=True, pattern=r"^\.waktu$")
+async def moon(event):
+    deq = deque(list("🎑🌄🌅🌇🌆🌃🌌"))
+    try:
+        for x in range(100):
+            await sleep(0.1)
+            await event.edit("".join(deq))
+            deq.rotate(1)
+    except BaseException:
+        return
+
+@register(outgoing=True, pattern=r"^\.buah$")
+async def moon(event):
+    deq = deque(list("🍉🍓🍇🍎🍍🍐🍌"))
+    try:
+        for x in range(35):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
