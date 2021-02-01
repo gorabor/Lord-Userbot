@@ -1,10 +1,8 @@
 # Alvin Gans
 
 from time import sleep
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP
 from userbot.events import register
-from telethon import events
-import asyncio
 
 
 @register(outgoing=True, pattern="^.hua$")
@@ -40,8 +38,8 @@ async def koc(e):
         await e.edit("(இ﹏இ`｡)")
         await e.edit("༼ಢ_ಢ༽")
         await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
-        
- 
+
+
 @register(outgoing=True, pattern='^.nah(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -51,7 +49,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`\n(\_/)`"
                      "`\n(●_●)`"
-                     "`\n💖<\  *Tapi Bo'ong`")       
+                     "`\n💖<\  *Tapi Bo'ong`")
 
 
 CMD_HELP.update({

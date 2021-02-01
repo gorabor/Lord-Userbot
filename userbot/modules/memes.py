@@ -1253,6 +1253,7 @@ async def moon(event):
     except BaseException:
         return
 
+
 @register(outgoing=True, pattern=r"^\.bunga$")
 async def moon(event):
     deq = deque(list("🌼🌻🌺🌹🌸🌷"))
@@ -1263,6 +1264,7 @@ async def moon(event):
             deq.rotate(1)
     except BaseException:
         return
+
 
 @register(outgoing=True, pattern=r"^\.waktu$")
 async def moon(event):
@@ -1275,6 +1277,7 @@ async def moon(event):
     except BaseException:
         return
 
+
 @register(outgoing=True, pattern=r"^\.buah$")
 async def moon(event):
     deq = deque(list("🍉🍓🍇🍎🍍🍐🍌"))
@@ -1285,6 +1288,7 @@ async def moon(event):
             deq.rotate(1)
     except BaseException:
         return
+
 
 @register(outgoing=True, pattern=r"^\.clock$")
 async def clock(event):
@@ -1570,6 +1574,7 @@ async def lol(e):
                      "`\n╭┻┻┻┫┃┈┈╭╮┃┃━┳━ `"
                      "`\n┃╱╭━╯┃┈┈┃┃┃┃┈┃┈ `"
                      "`\n╰╮╱╱╱┃┈┈╰╯╰╯┈┃┈ `")
+
 
 @register(outgoing=True, pattern=r"^\.lool$")
 async def lool(e):

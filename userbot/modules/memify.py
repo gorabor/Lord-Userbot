@@ -317,7 +317,6 @@ async def draw_meme_text(image_path, text):
     return webp_file
 
 
-
 CMD_HELP.update({
     "memify":
         "`.mmf Teks Atas ; Teks Bawah`\
