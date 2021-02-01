@@ -288,7 +288,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`Anda Telah Diblokir..`")
+        await block.edit("`Anda Telah Diblokir!`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -341,12 +341,12 @@ async def add_pmsg(cust_msg):
 
     if conf.lower() == "set":
         message = await cust_msg.get_reply_message()
-        status = "Disimpan"
+        status = "Pesan"
 
         # check and clear user unapproved message first
         if custom_message is not None:
             sql.delgvar("unapproved_msg")
-            status = "Diperbarui"
+            status = "Pesan"
 
         if message:
             # TODO: allow user to have a custom text formatting
@@ -361,7 +361,7 @@ async def add_pmsg(cust_msg):
 
         if BOTLOG:
             await cust_msg.client.send_message(
-                BOTLOG_CHATID, f"***{status} Pesan PM Yang Tersimpan Dalam Room Chat:*** \n\n{msg}"
+                BOTLOG_CHATID, f"**{status} PM Yang Tersimpan Dalam Room Chat Anda:** \n\n{msg}"
             )
 
     if conf.lower() == "reset":
@@ -374,7 +374,7 @@ async def add_pmsg(cust_msg):
     if conf.lower() == "get":
         if custom_message is not None:
             await cust_msg.edit(
-                "***Ini Adalah Pesan PM Yang Sekarang Dikirimkan Ke Room Chat Anda:***" f"\n\n{custom_message}"
+                "**Ini Adalah Pesan PM Yang Sekarang Dikirimkan Ke Room Chat Anda:**" f"\n\n{custom_message}"
             )
         else:
             await cust_msg.edit(
