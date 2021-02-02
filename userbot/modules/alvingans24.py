@@ -57,6 +57,45 @@ async def typewriter(typew):
                      "`\n(●_●)`"
                      "`\n💔<\  *Terimakasih`")
 
+@bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 3
+
+    animation_ttl = range(0, 103)
+
+    input_str = event.pattern_match.group(1)
+
+    if input_str == "ceritacinta":
+
+        await event.edit(input_str)
+
+        animation_chars = [
+            "`Cerita ❤️ Cinta` ",
+            "  😐             😕 \n/👕\         <👗\ \n 👖               /|",
+            "  😉          😳 \n/👕\       /👗\ \n  👖            /|",
+            "  😚            😒 \n/👕\         <👗> \n  👖             /|",
+            "  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
+            "  😍          😍 \n/👕\       /👗\ \n  👖           /|",
+            "  😘   😊 \n /👕\/👗\ \n   👖   /|",
+            " 😳  😁 \n /|\ /👙\ \n /     / |",
+            "😈    /😰\ \n<|\      👙 \n /🍆    / |",
+            "😅 \n/(),✊😮 \n /\         _/\\/|",
+            "😎 \n/\\_,__😫 \n  //    //       \\",
+            "😖 \n/\\_,💦_😋  \n  //         //        \\",
+            "  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
+            "`TAMAT 😅`"]
+
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 103])
+
 
 @register(outgoing=True, pattern='^.nah(?: |$)(.*)')
 async def typewriter(typew):
@@ -69,7 +108,6 @@ async def typewriter(typew):
                      "`\n(●_●)`"
                      "`\n💖<\  *Tapi Bo'ong`")
 # Alpinnnn Gans
-
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
@@ -102,47 +140,7 @@ async def _(event):
 
             await event.edit(animation_chars[i % 11])
 # Alvin Imut
-
-
-@bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
-async def _(event):
-
-    if event.fwd_from:
-
-        return
-
-    animation_interval = 3
-
-    animation_ttl = range(0, 103)
-
-    input_str = event.pattern_match.group(1)
-
-    if input_str == "ceritacinta":
-
-        await event.edit(input_str)
-
-        animation_chars = [
-            "`Cerita ❤️ Cinta` ",
-            r"  😐             😕 \n/👕\         <👗\ \n 👖               /|",
-            r"  😉          😳 \n/👕\       /👗\ \n  👖            /|",
-            r"  😚            😒 \n/👕\         <👗> \n  👖             /|",
-            r"  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
-            r"  😍          😍 \n/👕\       /👗\ \n  👖           /|",
-            r"  😘   😊 \n /👕\/👗\ \n   👖   /|",
-            r" 😳  😁 \n /|\ /👙\ \n /     / |",
-            r"😈    /😰\ \n<|\      👙 \n /🍆    / |",
-            r"😅 \n/(),✊😮 \n /\         _/\\/|",
-            "😎 \n/\\_,__😫 \n  //    //       \\",
-            "😖 \n/\\_,💦_😋  \n  //         //        \\",
-            r"  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
-            "`TAMAT 😅`"]
-
-        for i in animation_ttl:
-
-            await asyncio.sleep(animation_interval)
-
-            await event.edit(animation_chars[i % 103])
-# Alvin Gans
+# Alvin Gans 
 
 CMD_HELP.update({
     "animasi":
