@@ -42,6 +42,22 @@ async def koc(e):
         await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
+@register(outgoing=True, pattern='^.huh(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`\n(\_/)`"
+                     "`\n(●_●)`"
+                     "`\n />❤️ *Ini Buat Kamu`")
+    sleep(2)
+    await typew.edit("`\n(\_/)`"
+                     "`\n(●_●)`"
+                     "`\n/>💔  *Aku Ambil Lagi`")
+    sleep(2)
+    await typew.edit("`\n(\_/)`"
+                     "`\n(●_●)`"
+                     "`\n💔<\  *Terimakasih`")
+
+
 @register(outgoing=True, pattern='^.nah(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -105,18 +121,18 @@ async def _(event):
 
         animation_chars = [
             "`Cerita ❤️ Cinta` ",
-            r"  😐             😕 \n/👕\         <👗\ \n 👖               /|",
-            r"  😉          😳 \n/👕\       /👗\ \n  👖            /|",
-            r"  😚            😒 \n/👕\         <👗> \n  👖             /|",
-            r"  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
-            r"  😍          😍 \n/👕\       /👗\ \n  👖           /|",
-            r"  😘   😊 \n /👕\/👗\ \n   👖   /|",
-            r" 😳  😁 \n /|\ /👙\ \n /     / |",
-            r"😈    /😰\ \n<|\      👙 \n /🍆    / |",
-            r"😅 \n/(),✊😮 \n /\         _/\\/|",
+            "  😐             😕 \n/👕\         <👗\ \n 👖               /|",
+            "  😉          😳 \n/👕\       /👗\ \n  👖            /|",
+            "  😚            😒 \n/👕\         <👗> \n  👖             /|",
+            "  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
+            "  😍          😍 \n/👕\       /👗\ \n  👖           /|",
+            "  😘   😊 \n /👕\/👗\ \n   👖   /|",
+            " 😳  😁 \n /|\ /👙\ \n /     / |",
+            "😈    /😰\ \n<|\      👙 \n /🍆    / |",
+            "😅 \n/(),✊😮 \n /\         _/\\/|",
             "😎 \n/\\_,__😫 \n  //    //       \\",
             "😖 \n/\\_,💦_😋  \n  //         //        \\",
-            r"  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
+            "  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
             "`TAMAT 😅`"]
 
         for i in animation_ttl:
@@ -128,7 +144,7 @@ async def _(event):
 
 CMD_HELP.update({
     "animasi":
-    "`.nah`\
+    "`.nah` ; `.huh`\
     \nUsage: tapi bo'ong.\
     \n\n`.bunga` ; `.buah`\
     \nUsage: animasi.\
