@@ -200,9 +200,9 @@ async def _(event):
     strings = {
         "name": "DeezLoad",
         "arl_token_cfg_doc": "Token ARL untuk Deezer",
-        "invalid_arl_token": "harap setel variabel yang diperlukan untuk modul ini",
-        "wrong_cmd_syntax": "bruh, sekarang saya pikir seberapa jauh kita harus melangkah. tolong hentikan Sesi saya ð¥º",
-        "server_error": "Mengalami kesulitan teknis.",
+        "invalid_arl_token": "Harap setel variabel yang diperlukan untuk modul ini",
+        "wrong_cmd_syntax": "Bruh, sekarang saya pikir seberapa jauh kita harus melangkah. tolong hentikan Sesi saya ð¥º",
+        "server_error": "Mengalami kesalahan teknis.",
         "processing": "`Sedang Mendownload....`",
         "uploading": "`Mengunggah.....`",
     }
@@ -338,7 +338,7 @@ CMD_HELP.update(
         "\nUsage: Download musik"
         "\n\n>`.netease now`"
         "\nUsage: Download LastFM scrobble."
-        "\n\n>`.vsong` **Artis - Judul Lagu**"
+        "\n\n>`.vsong` `Artis - Judul Lagu`"
         "\nUsage: Menemukan dan mengunggah video clip."
         "\n\n>`.smd <Artis - Judul Lagu>`"
         "\nUsage: Download musik dari Spotify"
