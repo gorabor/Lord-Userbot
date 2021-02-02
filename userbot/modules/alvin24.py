@@ -52,6 +52,49 @@ async def typewriter(typew):
                      "`\n💖<\  *Tapi Bo'ong`")
 
 
+
+
+@bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 3
+
+    animation_ttl = range(0, 103)
+
+    input_str = event.pattern_match.group(1)
+
+    if input_str == "ceritacinta":
+
+        await event.edit(input_str)
+
+        animation_chars = [
+            "`Cerita ❤️ Cinta` ",
+            "  😐             😕 \n/👕\         <👗\ \n 👖               /|",    
+            "  😉          😳 \n/👕\       /👗\ \n  👖            /|",
+            "  😚            😒 \n/👕\         <👗> \n  👖             /|",
+            "  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
+            "  😍          😍 \n/👕\       /👗\ \n  👖           /|",
+            "  😘   😊 \n /👕\/👗\ \n   👖   /|",
+            " 😳  😁 \n /|\ /👙\ \n /     / |",    
+            "😈    /😰\ \n<|\      👙 \n /🍆    / |",
+            "😅 \n/(),✊😮 \n /\         _/\\/|",
+            "😎 \n/\\_,__😫 \n  //    //       \\",
+            "😖 \n/\\_,💦_😋  \n  //         //        \\",
+            "  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
+            "`TAMAT 😅`"]
+
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 103])
+
+
+
 CMD_HELP.update({
     "animasi":
     "`.nah`\
@@ -62,6 +105,6 @@ CMD_HELP.update({
     \nUsage: animasi.\
     \n\n`.hua`\
     \nUsage: nangis.\
-    \n\n`kosong`\
-    \nUsage: kosong"
+    \n\n`.ceritacinta`\
+    \nUsage: liat sendiri"
 })
