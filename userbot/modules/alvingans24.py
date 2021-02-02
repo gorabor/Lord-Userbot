@@ -68,7 +68,7 @@ async def typewriter(typew):
     await typew.edit("`\n(\_/)`"
                      "`\n(●_●)`"
                      "`\n💖<\  *Tapi Bo'ong`")
-
+# Alpinnnn Gans
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
@@ -100,7 +100,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 11])
-
+# Alvin Imut
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
@@ -140,12 +140,12 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 103])
-
+# Alvin Gans 
 
 CMD_HELP.update({
     "animasi":
     "`.nah` ; `.huh`\
-    \nUsage: tapi bo'ong.\
+    \nUsage: cobain.\
     \n\n`.bunga` ; `.buah`\
     \nUsage: animasi.\
     \n\n`.waktu`\
