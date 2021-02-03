@@ -1,3 +1,6 @@
+<a href="https://cooltext.com"><img src="https://images.cooltext.com/5501763.gif" width="473" height="82" alt="LORD USERBOT" /></a>
+
+
 <p align="center">
   <a href="https://github.com/Zora24/Lord-Userbot/fork">
     <img src="https://img.shields.io/github/forks/Zora24/Lord-Userbot?label=Fork&style=social">
