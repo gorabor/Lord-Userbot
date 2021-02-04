@@ -26,7 +26,6 @@ async def get_adzan(adzan):
 
     parsed = json.loads(request.text)
 
-
     city = parsed["results"]["location"]["city"]
     country = parsed["results"]["location"]["country"]
     timezone = parsed["results"]["location"]["timezone"]
