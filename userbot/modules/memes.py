@@ -1868,9 +1868,9 @@ CMD_HELP.update({
     "\nUsage: Biar saya Google itu untuk Anda dengan cepat!"
     "\n\n>`.decide` [Alternatif: (.yes, .no, .maybe)]"
     "\nUsage: Buat keputusan cepat."
-    "\n> `.nou` `.bot` `.rock` `.gey` `.tf`; `.paw`; `.tai` `.nih`\n"
-    "\n> `.fag` `.gtfo`; `.stfu` `.lol` `.lool` `.fail `.leave`\n"
+    "\n> `.nou` `.bot` `.rock` `.gey` `.tf` `.paw` `.tai` `.nih`\n"
+    "\n> `.fag` `.gtfo`; `.stfu` `.lol` `.lool` `.fail` `.leave`\n"
     "\n> `.iwi` `.sayhi` `.koc` `.gas` `.earth` `.love` `.rain`\n"
     "\n> `.penis` `.emo` `.fuck` `.ok` `.skull`  `.monyet`\n"
-    "\n\n\n**Semoga Harimu Menyenangkan**\n`-Alvin`"
+    "\n\n\n**Semoga Harimu Menyenangkan**\n `-Alvin`"
 })
