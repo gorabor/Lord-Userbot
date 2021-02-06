@@ -133,7 +133,7 @@ async def _(event):
 
 
 
-@register(outgoing=True, pattern=r"^\.netease (?:(now)|(.*) - (.*))")
+@register(outgoing=True, pattern=r"^\.net (?:(now)|(.*) - (.*))")
 async def _(event):
     if event.fwd_from:
         return
@@ -417,11 +417,9 @@ async def upload_track(track_location, message):
 
 CMD_HELP.update(
     {
-        "song": ">`.song Artis - Judul Lagu`"
-        "\nUsage: Download musik"
-        "\n\n>`.netease Artis - Judul Lagu`"
+        "music": ">`.net Artis - Judul Lagu`"
         "\nUsage: Download Musik Dari @WooHaiBot"
-        "\n\n>`.netease now`"
+        "\n\n>`.net now`"
         "\nUsage: Download LastFM scrobble."
         "\n\n>`.vsong` `Artis - Judul Lagu`"
         "\nUsage: Menemukan dan mengunggah video clip."
