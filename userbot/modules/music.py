@@ -30,17 +30,30 @@ from userbot.events import register
 from userbot.utils import progress
 
 
+    bot,
+    lastfm,
+)
+from userbot.events import register
+from userbot.utils import chrome, progress
+
+
+async def getmusic(cat):
+    video_link = ""
+    search = cat
+    driver = await chrome()
+    driver.get("https://www.youtube.com/results?search_query=" + search)
+    user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
+    for i in user_data:
+        video_link = i.get_attribute("href")
+        break
+    command = f'youtube-dl --write-thumbnail --extract-audio --audio-format mp3 --audio-quality "320k" {video_link}'
+    os.system(command)
+
+
 async def getmusicvideo(cat):
     video_link = ""
     search = cat
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("--test-type")
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.binary_location = GOOGLE_CHROME_BIN
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    driver = await chrome()
     driver.get("https://www.youtube.com/results?search_query=" + search)
     user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
     for i in user_data:
@@ -48,6 +61,61 @@ async def getmusicvideo(cat):
         break
     command = 'youtube-dl -f "[filesize<50M]" --merge-output-format mp4 ' + video_link
     os.system(command)
+
+
+@register(outgoing=True, pattern=r"^\.song (.*)")
+async def _(event):
+    reply_to_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    reply = await event.get_reply_message()
+    if event.pattern_match.group(1):
+        query = event.pattern_match.group(1)
+        await event.edit("`Mohon Menunggu Lord, Sedang Mencari Musik Anda ヅ`")
+    elif reply.message:
+        query = reply.message
+        await event.edit("`Telah Mendapatkan Musik, Sedang Mengunggah.....ヅ`")
+    else:
+        await event.edit("`Lord, Apa Yang Seharusnya Saya Temukan? ヅ`")
+        return
+
+    await getmusic(str(query))
+    l = glob.glob("*.mp3")
+    loa = l[0]
+    metadata = extractMetadata(createParser(loa))
+    duration = 0
+    if metadata.has("duration"):
+        duration = metadata.get("duration").seconds
+    performer = loa.split("-")[0][0:-1]
+    title = loa.split("-")[1][1:]
+    img_extensions = ["webp", "jpg", "jpeg", "webp"]
+    img_filenames = [
+        fn_img
+        for fn_img in os.listdir()
+        if any(fn_img.endswith(ext_img) for ext_img in img_extensions)
+    ]
+    thumb_image = img_filenames[0]
+    await event.edit("`Pengunggahan Berhasil Dilakukan ヅ`")
+    c_time = time.time()
+    await event.client.send_file(
+        event.chat_id,
+        loa,
+        attributes=[
+            DocumentAttributeAudio(duration=duration, title=title, performer=performer)
+        ],
+        thumb=thumb_image,
+        allow_cache=False,
+        caption=query,
+        reply_to=reply_to_id,
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, event, c_time, "[UPLOAD]", loa)
+        ),
+    )
+    await event.delete()
+    os.system("rm -rf *.mp3")
+    os.remove(thumb_image)
+    subprocess.check_output("rm -rf *.mp3", shell=True)
+
 
 
 @register(outgoing=True, pattern=r"^\.netease (?:(now)|(.*) - (.*))")
@@ -334,15 +402,17 @@ async def upload_track(track_location, message):
 
 CMD_HELP.update(
     {
-        "getmusic": ">`.netease <Artis - Judul Lagu>`"
+        "musik": ">`.song Artis - Judul Lagu`"
         "\nUsage: Download musik"
+        "\n\n>`.netease Artis - Judul Lagu`"
+        "\nUsage: Download Musik Dari @WooHaiBot"
         "\n\n>`.netease now`"
         "\nUsage: Download LastFM scrobble."
         "\n\n>`.vsong` `Artis - Judul Lagu`"
         "\nUsage: Menemukan dan mengunggah video clip."
-        "\n\n>`.smd <Artis - Judul Lagu>`"
+        "\n\n>`.smd Artis - Judul Lagu`"
         "\nUsage: Download musik dari Spotify"
-        "\n\n>`.deez <spotify/link deezer>`"
+        "\n\n>`.deez (spotify/link deezer)`"
         "\nUsage: Download musik dari deezer."
         "\n*Format : `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
     }
