@@ -1,6 +1,8 @@
 # Copyright (C) 2020 Aidil Aryanto.
 # DeeezLoad Ported from UniBorg by AnggaR96s
 # All rights reserved.
+# Alvin Gans
+# Yang Baca Bau Sawi
 
 import asyncio
 import glob
@@ -28,6 +30,25 @@ from userbot import (
 )
 from userbot.events import register
 from userbot.utils import progress
+
+async def getmusicvideo(cat):
+    video_link = ""
+    search = cat
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--ignore-certificate-errors")
+    chrome_options.add_argument("--test-type")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.binary_location = GOOGLE_CHROME_BIN
+    driver = webdriver.Chrome(chrome_options=chrome_options)
+    driver.get("https://www.youtube.com/results?search_query=" + search)
+    user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
+    for i in user_data:
+        video_link = i.get_attribute("href")
+        break
+    command = 'youtube-dl -f "[filesize<50M]" --merge-output-format mp4 ' + video_link
+    os.system(command)
 
 
 async def getmusic(cat):
@@ -395,7 +416,7 @@ async def upload_track(track_location, message):
 
 CMD_HELP.update(
     {
-        "musik": ">`.song Artis - Judul Lagu`"
+        "song": ">`.song Artis - Judul Lagu`"
         "\nUsage: Download musik"
         "\n\n>`.netease Artis - Judul Lagu`"
         "\nUsage: Download Musik Dari @WooHaiBot"
