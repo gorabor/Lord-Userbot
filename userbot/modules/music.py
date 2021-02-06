@@ -30,13 +30,6 @@ from userbot.events import register
 from userbot.utils import progress
 
 
-    bot,
-    lastfm,
-)
-from userbot.events import register
-from userbot.utils import chrome, progress
-
-
 async def getmusic(cat):
     video_link = ""
     search = cat
