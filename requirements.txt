@@ -89,3 +89,4 @@ lottie
 wand
 colour
 scipy
+wordcloud
