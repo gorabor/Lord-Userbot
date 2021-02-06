@@ -33,7 +33,7 @@ async def _(event):
     current_msg = event.id
     cap = """
 ⫸ **Judul Musik** - `{}`
-⫸ **Diunggah Dari** {}
+⫸ **Pengunggah** {}
 """
     try:
         async for event in userbot.iter_messages(
