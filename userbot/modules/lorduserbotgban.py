@@ -263,7 +263,7 @@ async def gspider(rk):
         
 
 
-@register(outgoing=True, pattern=r"^.gban(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.gbans(?: |$)(.*)")
 async def gspider(rk): 
    lazy = rk ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
    if not sender.id == me.id:
