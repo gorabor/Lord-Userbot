@@ -57,7 +57,7 @@ except:
    client2 = client3 = None
    pass
 
-@client.on(ChatAction)
+@bot.on(ChatAction)
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
@@ -81,8 +81,8 @@ async def handler(rkG):
                      f"**Aksi**  : `Mute`")                                                
                  except:                          
                     return 
-if client2:
- @client2.on(ChatAction)
+if bot2:
+ @bot2.on(ChatAction)
  async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
@@ -107,8 +107,8 @@ if client2:
                  except:                          
                     return
                     
-if client3:
- @client3.on(ChatAction)
+if bot3:
+ @bot3.on(ChatAction)
  async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
