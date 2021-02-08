@@ -36,7 +36,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("Terjadi Kesalahan... Mohon Lapor Ke Grup @LordUserbot_Group", str(err))           
+            return await event.edit("`Terjadi Kesalahan... Mohon Lapor Ke Grup` @LordUserbot_Group", str(err))           
     return user_obj, extra
 
 
@@ -62,7 +62,7 @@ async def gben(userbot):
     else:
         dark = await dc.edit("`Memproses Global Banned Pengguna Ini ヅ`")
     me = await userbot.client.get_me()
-    await dark.edit(f"Global Banned Telah Aktif, Anda Akan Dibanned Secara Global Oleh Lord ヅ")
+    await dark.edit(f"`Global Banned Akan Segera Aktif, Anda Akan Dibanned Secara Global Oleh Lord ヅ`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -103,18 +103,18 @@ async def gben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await dark.edit(f"`Global Banned Aktif ✅`\n `Melakukan Banned Di` **{a}** `Grup`")
+                await dark.edit(f"`Global Banned Telah Aktif ✅`\n`Global Bannned Sedang Dalam Proses......`\n`Orang Ini Akan Terbanned Digrup Jika Anda Seorang Admin Grup ヅ`")
             except:
                 b += 1
     else:
         await dark.edit(f"`Mohon Balas Ke Pesan Lord`")
     try:
         if gmute(user.id) is False:
-            return await dark.edit(f"**Kesalahan! Pengguna Sudah Di Global Banned Lord.**")
+            return await dark.edit(f"**Kesalahan! Pengguna Ini Sudah Kena Perintah Global Banned Lord.**")
     except:
         pass
     return await dark.edit(
-        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n✣ Pengguna: [{user.first_name}](tg://user?id={user.id})**\n**✣ Dibanned:** `{a} Grup`"
+        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**✣ Aksi:** `Global Banned`"
     )
 
 
@@ -125,7 +125,7 @@ async def gunben(userbot):
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`Perintah Lord, Membatalkan Perintah Global Banned Pengguna Ini ヅ`")
+        dark = await dc.reply("`Membatalkan Perintah Global Banned Pengguna Ini ヅ`")
     else:
         dark = await dc.edit("`Membatalkan Perintah Global Banned ヅ`")
     me = await userbot.client.get_me()
@@ -168,18 +168,18 @@ async def gunben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await dark.edit(f"`UnGbanned Aktif ✅`\n`UnGbanned Di` **{a}** `Grup`")
+                await dark.edit(f"`Membatalkan Global Banned Aktif ✅`\n`Proses Membatalkan Global Banned....`\n `Orang Ini Akan Dapat Bergabung Ke Grup Anda Lagi ヅ`")
             except:
                 b += 1
     else:
-        await dark.edit("`Harap Balas Ke Pesan Pengguna Lord ヅ")
+        await dark.edit("`Harap Balas Ke Pesan Pengguna Lord ヅ`")
     try:
         if ungmute(user.id) is False:
             return await dark.edit("**Kesalahan! Pengguna Sedang Tidak Di Global Banned.**")
     except:
         pass
     return await dark.edit(
-        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n✣ Pengguna: [{user.first_name}](tg://user?id={user.id})**\n**✣ Total UnGbanned:** `{a} Grup`"
+        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})**\n**✣ Aksi:** `Membatalkan Global Banned`"
     )
 
 
