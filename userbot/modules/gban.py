@@ -168,7 +168,7 @@ async def gunben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await dark.edit(f"`Membatalkan Global Banned Aktif ✅`\n`Proses Membatalkan Global Banned....`\n `Orang Ini Akan Dapat Bergabung Ke Grup Anda Lagi ヅ`")
+                await dark.edit(f"`Membatalkan Global Banned Aktif ✅`\n`Proses Membatalkan Global Banned....`\n`Orang Ini Akan Dapat Bergabung Ke Grup Anda Lagi ヅ`")
             except:
                 b += 1
     else:
@@ -179,7 +179,7 @@ async def gunben(userbot):
     except:
         pass
     return await dark.edit(
-        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})**\n**✣ Aksi:** `Membatalkan Global Banned`"
+        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**✣ Aksi:** `Membatalkan Global Banned`"
     )
 
 
