@@ -1,4 +1,8 @@
 # Lord-Userbot
+# Create By Alvin
+# Dont Remove License
+# Yang Baca Dalem Hati Bau Sawi
+
 from time import sleep
 from userbot import CMD_HELP, bot
 from userbot.events import register
@@ -112,6 +116,148 @@ async def typewriter(typew):
                      "＜ 、･　　|　　＼ \n"
                      "　＼＿＿／∪ _ ∪) \n"
                      "　　　　　 Ｕ Ｕ\n")
+
+# Alvin Gans
+
+@register(outgoing=True, pattern='^.pistol(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("░▄▌░░░░░░░░░▄\n"
+                     "████████████▄\n"
+                     "░░░░░░░░▀▐████\n"
+                     "░░░░░░░░░░░▐██▌\n")
+
+
+# Yang Baca Jomblo -Alvin
+
+@register(outgoing=True, pattern='^.ano(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("Anonymous \n"
+                     "─────█─▄▀█──█▀▄─█─────\n"
+                     "────▐▌──────────▐▌────\n"
+                     "────█▌▀▄──▄▄──▄▀▐█────\n"
+                     "───▐██──▀▀──▀▀──██▌───\n"
+                     "──▄████▄──▐▌──▄████▄──\n")
+
+@register(outgoing=True, pattern='^.kucing(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("──────▄▀▄─────▄▀▄\n"
+                     "─────▄█░░▀▀▀▀▀░░█▄\n"
+                     "─▄▄──█░░░░░░░░░░░█──▄▄\n"
+                     "█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█\n")
+
+@register(outgoing=True, pattern='^.alien(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("▒▒▄▀▀▀▀▀▄▒▒▒▒▒▄▄▄▄▄▒▒▒\n"
+                     "▒▐░▄░░░▄░▌▒▒▄█▄█▄█▄█▄▒\n"
+                     "▒▐░▀▀░▀▀░▌▒▒▒▒▒░░░▒▒▒▒\n"
+                     "▒▒▀▄░═░▄▀▒▒▒▒▒▒░░░▒▒▒▒\n"
+                     "▒▒▐░▀▄▀░▌▒▒▒▒▒▒░░░▒▒▒▒\n")
+
+
+@register(outgoing=True, pattern='^.dinosaurus(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("░▄▄▄▄░\n"
+                     "▀▀▄██►\n"
+                     "▀▀███►\n"
+                     "░▀███►░█►\n"
+                     "▒▄████▀▀\n")
+
+@register(outgoing=True, pattern='^.robot(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("░░░░░░░▄█▄▄▄█▄\n"
+                     "▄▀░░░░▄▌─▄─▄─▐▄░░░░▀▄\n"
+                     "█▄▄█░░▀▌─▀─▀─▐▀░░█▄▄█\n"
+                     "░▐▌░░░░▀▀███▀▀░░░░▐▌\n"
+                     "████░▄█████████▄░████\n")
+
+
+
+@register(outgoing=True, pattern='^.iblis(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("───▄█▌─▄─▄─▐█▄\n"
+                     "───██▌▀▀▄▀▀▐██\n"
+                     "───██▌─▄▄▄─▐██\n"
+                     "───▀██▌▐█▌▐██▀\n"
+                     "▄██████─▀─██████▄\n")
+
+
+
+
+@register(outgoing=True, pattern='^.snowman(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("░▄░█░░░▄▀▀▀▀▀▄░░░█░▄░\n"
+                     "▄▄▀▄░░░█─▀─▀─█░░░▄▀▄▄\n"
+                     "░░░░▀▄▒▒▒▒▒▒▒▒▒▄▀░░░░\n"
+                     "░░░░░█────▀────█░░░░░\n"
+                     "░░░░░█────▀────█░░░░░\n")
+
+
+
+@register(outgoing=True, pattern='^.paus(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("─────▀▄▀─────▄─────▄\n"
+                     "──▄███████▄──▀██▄██▀\n"
+                     "▄█████▀█████▄──▄█\n"
+                     "███████▀████████▀\n"
+                     "─▄▄▄▄▄▄███████▀\n")
+
+
+
+@register(outgoing=True, pattern='^.radio(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("░░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n"
+                     "██▀▀▀██▀▀▀▀▀▀██▀▀▀██\n"
+                     "█▒▒▒▒▒█▒▀▀▀▀▒█▒▒▒▒▒█\n"
+                     "█▒▒▒▒▒█▒████▒█▒▒▒▒▒█\n"
+                     "██▄▄▄██▄▄▄▄▄▄██▄▄▄██\n")
+
+
+@register(outgoing=True, pattern='^.ikan(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("─▀▀▌───────▐▀▀\n"
+                     "─▄▀░◌░░░░░░░▀▄\n"
+                     "▐░░◌░▄▀██▄█░░░▌\n"
+                     "▐░░░▀████▀▄░░░▌\n"
+                     "═▀▄▄▄▄▄▄▄▄▄▄▄▀═\n")
+
+
+
+@register(outgoing=True, pattern='^.siput(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("───▄▄▄\n"
+                     "─▄▀░▄░▀▄\n"
+                     "─█░█▄▀░█\n"
+                     "─█░▀▄▄▀█▄█▄▀\n"
+                     "▄▄█▄▄▄▄███▀\n")
+
+
+
+@register(outgoing=True, pattern='^.hello(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("┈┈┈┈┈┈╱╱╱▕╲╱▏╲┈┈┈\n"
+                      "┈┈┈┈┈▕╱╱╱▕╱╲▏╲▏┈┈\n"
+                      "┈╭━╮┈▕╱╱╭╮╭╮╲╲▏┈┈\n"
+                      "┈┃┈┗╮▕╱▏┳╭╮┳▕╲▏┈┈\n"
+                      "┈┃┈╭╯▕┊╲╰━━╯╱┊▏┈┈\n"
+                      "┈┣━┫┈▕┊┊▔▏▕▔┊┊▏┈┈\n"
+                      "┏┓┏┳━━┳┓┏┓┏━━┓┏┓\n"
+                      "┃┗┛┃━━┫┃┃┃┃╭╮┃┃┃\n"
+                      "┃┏┓┃━━┫┗┫┗┫╰╯┃┗┛\n"
+                      "┗┛┗┻━━┻━┻━┻━━┛┏┓\n"
+                      "┈┈┈┈┈┈┈┈┈┈┈┈┈┈┗┛\n")
 
 
 @register(outgoing=True, pattern='^.awkwok(?: |$)(.*)')
@@ -301,16 +447,166 @@ async def typewriter(typew):
     await typew.edit("**♪┗ ( ･o･) ┓♪┏ (・o･) ┛♪**")
 
 
+@register(outgoing=True, pattern='^.kucing(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("──────▄▀▄─────▄▀▄\n"
+                     "─────▄█░░▀▀▀▀▀░░█▄\n"
+                     "─▄▄──█░░░░░░░░░░░█──▄▄\n"
+                     "█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█\n")
+    sleep(1)
+    await typew.edit("░▄▄▄▄░\n"
+                     "▀▀▄██►\n"
+                     "▀▀███►\n"
+                     "░▀███►░█►\n"
+                     "▒▄████▀▀\n")
+    sleep(1)
+    await typew.edit("─────▀▄▀─────▄─────▄\n"
+                     "──▄███████▄──▀██▄██▀\n"
+                     "▄█████▀█████▄──▄█\n"
+                     "███████▀████████▀\n"
+                     "─▄▄▄▄▄▄███████▀\n")
+    sleep(1)
+    await typew.edit("─▀▀▌───────▐▀▀\n"
+                     "─▄▀░◌░░░░░░░▀▄\n"
+                     "▐░░◌░▄▀██▄█░░░▌\n"
+                     "▐░░░▀████▀▄░░░▌\n"
+                     "═▀▄▄▄▄▄▄▄▄▄▄▄▀═\n")
+    sleep(1)
+    await typew.edit("───▄▄▄\n"
+                     "─▄▀░▄░▀▄\n"
+                     "─█░█▄▀░█\n"
+                     "─█░▀▄▄▀█▄█▄▀\n"
+                     "▄▄█▄▄▄▄███▀\n")
+    sleep(1)
+    await typew.edit("░░░░▓\n"
+                     "░░░▓▓\n"
+                     "░░█▓▓█\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░░░██▓▓██\n"
+                     "░░░░██▓▓██\n"
+                     "░░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░██▓▓██\n"
+                     "░░░██▓▓███\n"
+                     "░░░░██▓▓████\n"
+                     "░░░░░██▓▓█████\n"
+                     "░░░░░░██▓▓██████\n"
+                     "░░░░░░███▓▓███████\n"
+                     "░░░░░████▓▓████████\n"
+                     "░░░░█████▓▓█████████\n"
+                     "░░░█████░░░█████●███\n"
+                     "░░████░░░░░░░███████\n"
+                     "░░███░░░░░░░░░██████\n"
+                     "░░██░░░░░░░░░░░████\n"
+                     "░░░░░░░░░░░░░░░░███\n"
+                     "░░░░░░░░░░░░░░░░░░░\n")
+    sleep(1)
+    await typew.edit("┈┈┏━╮╭━┓┈╭━━━━╮\n"
+                     "┈┈┃┏┗┛┓┃╭┫Ngok ┃\n"
+                     "┈┈╰┓▋▋┏╯╯╰━━━━╯\n"
+                     "┈╭━┻╮╲┗━━━━╮╭╮┈\n"
+                     "┈┃▎▎┃╲╲╲╲╲╲┣━╯┈\n"
+                     "┈╰━┳┻▅╯╲╲╲╲┃┈┈┈\n"
+                     "┈┈┈╰━┳┓┏┳┓┏╯┈┈┈\n"
+                     "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n")
+    sleep(1)
+    await typew.edit("╥━━━━━━━━╭━━╮━━┳\n"
+                     "╢╭╮╭━━━━━┫┃▋▋━▅┣\n"
+                     "╢┃╰┫┈┈┈┈┈┃┃┈┈╰┫┣\n"
+                     "╢╰━┫┈┈┈┈┈╰╯╰┳━╯┣\n"
+                     "╢┊┊┃┏┳┳━━┓┏┳┫┊┊┣\n"
+                     "╨━━┗┛┗┛━━┗┛┗┛━━┻\n")
+    await asyncio.sleep(5)
+    await event.delete()
+
+
+
+
+
+
+
+
+
+
+
+
+
 CMD_HELP.update({
     "vip":
-    "`.bulan` ; `.hati` ; `.bernyanyi`\
-    \nUsage: liat aja.\
-    \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
+    "`.bulan` ; `.hati`\n`.bernyanyi` ; `.hewan`\
+    \nUsage: animasi.\
+    \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir` ; `.pistol` `.radio`\
     \nUsage: liat sendiri\
-    \n\n`.y`\
-    \nUsage: jempol\
+    \n\n`.y` ; `.hello`\
+    \nUsage: liat sendiri\
     \n\n`.awkwok`\
     \nUsage: ketawa lari.\
-    \n\n`.ular` ; `.babi` ; `.ajg`\
-    \nUsage: liat sendiri."
+    \n\n`.robot` ; `.ano` ; `.snowman`\n`.iblis` ;\
+    \nUsage: art.\
+    \n\n`.ular` ; `.babi` ; `.ajg`\n`.ikan` ; `.paus` ; `.siput`\n`.kucing` ; `.dinosaurus`\
+    \nUsage: Bermacam - macam art hewan."
 })
