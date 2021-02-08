@@ -213,7 +213,7 @@ async def delf(event):
     await event.edit("**Disconnected from all connected federations!**")
 
 
-CMD_HELP.update({"fban": ">`.fban <id/username> <reason>`"
+CMD_HELP.update({"federations": ">`.fban <id/username> <reason>`"
                  "\nUsage: Bans user from connected federations."
                  "\nYou can reply to the user whom you want to fban or manually pass the username/id."
                  "\n\n`>.unfban <id/username> <reason>`"
