@@ -179,7 +179,7 @@ async def gunben(userbot):
     except:
         pass
     return await dark.edit(
-        f"*"**♛ Perintah Lord:** `{ALIVE_NAME}`\n✣ Pengguna: [{user.first_name}](tg://user?id={user.id})**\n**✣ Total UnGbanned:** `{a} Grup`"
+        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n✣ Pengguna: [{user.first_name}](tg://user?id={user.id})**\n**✣ Total UnGbanned:** `{a} Grup`"
     )
 
 
