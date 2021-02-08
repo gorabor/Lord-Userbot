@@ -37,8 +37,9 @@ async def _(event):
   # Alvin Gans                                         [msg_start.id, r.id, msg.id, details.id, video.id])
         await event.delete()
 
-CMD_HELP.update({
-    "tiktok":
-    ".tiktok <Link>"
-    "\nUsage: Download Video Tiktok Tanpa Watermark"
-})
+CMD_HELP.update(
+    {
+        "tiktok": ">`.tiktok <Link>`"
+        "\nUsage: Download Video Tiktok Tanpa Watermark"
+    }
+)
